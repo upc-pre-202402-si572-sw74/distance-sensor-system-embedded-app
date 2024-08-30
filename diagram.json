@@ -1,0 +1,66 @@
+{
+  "version": 1,
+  "author": "Angel Velasquez",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 231, "left": -259.8, "attrs": {} },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "fl-distance-sensor",
+      "top": -113.7,
+      "left": 43.9,
+      "attrs": { "distance": "250" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "fr-distance-sensor",
+      "top": -113.7,
+      "left": 226.3,
+      "attrs": { "distance": "250" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "rl-distance-sensor",
+      "top": -113.7,
+      "left": 408.7,
+      "attrs": { "distance": "250" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "rr-distance-sensor",
+      "top": -113.7,
+      "left": 591.1,
+      "attrs": { "distance": "250" }
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "display-actuator",
+      "top": 457.6,
+      "left": 53.6,
+      "attrs": { "pins": "i2c" }
+    }
+  ],
+  "connections": [
+    [ "fl-distance-sensor:GND", "uno:GND.2", "black", [ "v182.4", "h-235.5" ] ],
+    [ "fr-distance-sensor:GND", "uno:GND.2", "black", [] ],
+    [ "rl-distance-sensor:GND", "uno:GND.2", "black", [] ],
+    [ "rr-distance-sensor:GND", "uno:GND.2", "black", [] ],
+    [ "fl-distance-sensor:VCC", "uno:5V", "red", [] ],
+    [ "fr-distance-sensor:VCC", "uno:5V", "red", [] ],
+    [ "rl-distance-sensor:VCC", "uno:5V", "red", [] ],
+    [ "rr-distance-sensor:VCC", "uno:5V", "red", [] ],
+    [ "fl-distance-sensor:TRIG", "uno:10", "purple", [] ],
+    [ "fr-distance-sensor:TRIG", "uno:11", "purple", [] ],
+    [ "rl-distance-sensor:TRIG", "uno:12", "purple", [] ],
+    [ "rr-distance-sensor:TRIG", "uno:13", "purple", [] ],
+    [ "fl-distance-sensor:ECHO", "uno:4", "green", [] ],
+    [ "fr-distance-sensor:ECHO", "uno:5", "green", [] ],
+    [ "rl-distance-sensor:ECHO", "uno:6", "green", [] ],
+    [ "rr-distance-sensor:ECHO", "uno:7", "green", [] ],
+    ["display-actuator:GND", "uno:GND.3", "black"],
+    ["display-actuator:VCC", "uno:5V", "red"],
+    ["display-actuator:SDA", "uno:A4", "green"],
+    ["display-actuator:SCL", "uno:A5", "blue"]
+  ],
+  "dependencies": {}
+}
