@@ -1,14 +1,17 @@
-/*
-* distance-sensor-system-embedded-app
-*
-* Embedded Application that monitors a set 
-* of 4 ultrasonic distance sensors 
-* showing readed values on an LCD display actuator.
-*
-*/
+
 
 #include "DisplayActuator.h"
 #include "DistanceSensor.h"
+
+/*
+* distance-sensor-system-embedded-app
+*
+* @description
+* Embedded Application that monitors a set
+* of 4 ultrasonic distance sensors
+* showing read values on an LCD actuator.
+*
+*/
 
 // Define Assigned Trigger Pins
 #define FL_TRIGGER_PIN 10
@@ -22,12 +25,18 @@
 #define RL_ECHO_PIN 6
 #define RR_ECHO_PIN 7
 
+// Initialize Display Actuator
 DisplayActuator displayActuator;
+
+// Initialize Distance Sensors
 DistanceSensor flDistanceSensor(FL_TRIGGER_PIN, FL_ECHO_PIN);
 DistanceSensor frDistanceSensor(FR_TRIGGER_PIN, FR_ECHO_PIN);
 DistanceSensor rlDistanceSensor(RL_TRIGGER_PIN, RL_ECHO_PIN);
 DistanceSensor rrDistanceSensor(RR_TRIGGER_PIN, RR_ECHO_PIN);
 
+/**
+ * Updates the dashboard with the latest data.
+ */
 void updateDashboard() {
 
   displayActuator.setCursor(0, 0);
@@ -46,11 +55,17 @@ void updateDashboard() {
 
 }
 
+/**
+ * Setup Function
+ */
 void setup() {
   // Initialize Display
   displayActuator.init();
 }
 
+/**
+ * Loop Function
+ */
 void loop() {
   // Update Data Visualization
   updateDashboard();
